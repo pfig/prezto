@@ -11,3 +11,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# Completions
+#
+source /usr/local/share/zsh/site-functions/_aws
