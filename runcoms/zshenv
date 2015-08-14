@@ -13,3 +13,5 @@ fi
 # Python
 export PROJECT_HOME="$HOME/Development"
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+SNAPSHOT_WHEEL_DIR=~/.snapshot/wheelhouse/
+

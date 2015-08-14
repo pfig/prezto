@@ -12,6 +12,12 @@ fi
 
 # Customize to your needs...
 
+# snapshot's wheelhouse
+if [ ! -e $SNAPSHOT_WHEEL_DIR ]; then
+    mkdir -p $SNAPSHOT_WHEEL_DIR
+fi
+
 # Completions
 #
 source /usr/local/share/zsh/site-functions/_aws
+
