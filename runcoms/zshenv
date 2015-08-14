@@ -13,5 +13,44 @@ fi
 # Python
 export PROJECT_HOME="$HOME/Development"
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Perl
+if [ -f ~/perl5/perlbrew/etc/bashrc ]; then
+    source ~/perl5/perlbrew/etc/bashrc
+fi
+
+# Go
+GOROOT=/usr/local/opt/go
+GOPATH=~/go
+PATH=$PATH:$GOROOT/libexec/bin:$GOPATH/bin
+
+# Ruby
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 SNAPSHOT_WHEEL_DIR=~/.snapshot/wheelhouse/
+
+HADOOP_INSTALL_DIR=/Users/pfig/Development/opt
+HADOOP_HOME=$HADOOP_INSTALL_DIR/hadoop2
+HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+HADOOP_CLASSPATH=$HADOOP_HOME/share/hadoop/common/lib/hadoop-lzo-0.4.20-SNAPSHOT.jar
+HADOOP_OPTS="-Djava.security.krb5.realm= -Djava.security.krb5.kdc="
+PATH=$PATH:$HADOOP_HOME/bin
+
+SPARK_HOME=/Users/pfig/Development/opt/spark
+PATH=$PATH:$SPARK_HOME/bin
+
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+MAVEN_HOME=/Users/pfig/Development/opt/mvn3
+PATH=$PATH:$MAVEN_HOME/bin
+
+PATH=~/bin:$PATH
+
+export PATH
+export GOROOT GOPATH
+export JAVA_HOME MAVEN_HOME
+export SNAPSHOT_WHEEL_DIR WORKON_HOME PROJECT_HOME
+export HADOOP_INSTALL_DIR HADOOP_HOME HADOOP_CONF_DIR HADOOP_CLASSPATH \
+    HADOOP_OPTS PYFS_HADOOP_NAMENODE_ADDR PYFS_HADOOP_NAMENODE_PATH \
+    HADOOP_USERNAME SPARK_HOME
 
